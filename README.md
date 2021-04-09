@@ -109,11 +109,11 @@ or just as single option in run shell:
 # Clion setting
 
 In short, you should add a new Toolchain entry in settings under Build, Execution, Deployment as a Remote Host type.
-
+![image](https://github.com/shanpenghui/clion_remote_debug/blob/main/imgs/toolchains.png)
 Then click in the Credentials section and fill out the SSH credentials we set-up in the Dockerfile (Host: localhost, Port: 2222, User name: user, Password: password).
-
+![image](https://github.com/shanpenghui/clion_remote_debug/blob/main/imgs/ssh.png)
 Finally, add a CMake profile that uses this toolchain(remote). If you want more fine grained control over the paths used inside the container take a look at the Deployment settings page.
-
+![image](https://github.com/shanpenghui/clion_remote_debug/blob/main/imgs/cmake.png)
 
 # ROS2 setting
 
@@ -131,7 +131,7 @@ Then copy env.sh to your ros2 workspace(env.sh is provided in my project), get t
 ```
 
 Copy the output to CLion -> CMake -> Environment.
-
+![image](https://github.com/shanpenghui/clion_remote_debug/blob/main/imgs/environment.png)
 
 Now, all is finished.
 
