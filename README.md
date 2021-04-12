@@ -37,9 +37,10 @@ If existed group, need to change group authority and add a new user(better to ig
 
 ```shell
 useradd -m sftpuser -g user
+echo 'sftpuser:123' | chpasswd
 ```
 
-Modify group authority by sudoers file.
+### 2.3 Modify group authority by sudoers file(Optional).
 
 Firstly, open write authority of sudoers file:
 ```shell
