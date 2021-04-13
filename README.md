@@ -25,7 +25,7 @@ sudo apt-get update \
 ### 2.1 New group and user
 Add new group and user (recommended)
 ```shell
-groupadd -g 1000 test
+groupadd -g 1011 test
 useradd -m testuser -g test -G root
 echo 'testuser:123' | chpasswd
 ```
@@ -138,4 +138,33 @@ Now, all is finished.
 
 
 Enjoy yourself.
+
+
+
+# Others
+
+## 1. Can not find custom package
+
+Such as the costmap_converter for teb. costmap_converter pkg is not installed because I want to use the custom version. But at the begin, cannot find it.
+
+```text
+Could not find a package configuration file provided by “costmap_converter” with any of the following names
+```
+
+**Solve by set pkg_DIR before find_package.**
+
+```c++
+set(costmap_converter_DIR /midea_robot/ros2_ws/build/costmap_converter)
+```
+
+Because colcon build is corrected. In build folder, there are **Config.cmake files. We can use the files to find the pkg.
+
+## 2. Open colcon compile option to show which lib linked.
+
+Use the command to show compile process.
+```shell
+colcon build --symlink-install --event-handlers console_direct+
+```
+
+
 
