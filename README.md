@@ -167,4 +167,23 @@ colcon build --symlink-install --event-handlers console_direct+
 ```
 
 
+# Solve 'cannot create directory' problem
+
+<p align='center'>
+    <img src="./imgs/cannot_create_directory.gif" alt="drawing" width="800"/>
+</p>
+
+
+# mp4 to gif
+
+```shell
+ffmpeg \
+-i clion_remote_docker_debug-2021-05-12_23.29.07.mp4 \
+-r 30 \
+-vf "scale=512:-1,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" \
+-ss 00:00:00 -to 00:00:42 \
+cannot_create_directory.gif
+```
+
+
 
